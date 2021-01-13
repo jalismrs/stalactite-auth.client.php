@@ -1,0 +1,353 @@
+# OpenAPI\Client\ServerAppsApi
+
+All URIs are relative to https://stalactite.jalis.pro/auth.
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createServerApp()**](ServerAppsApi.md#createServerApp) | **POST** /serverApps | 
+[**deleteServerApp()**](ServerAppsApi.md#deleteServerApp) | **DELETE** /serverApps/{uid} | 
+[**getServerApp()**](ServerAppsApi.md#getServerApp) | **GET** /serverApps/{uid} | 
+[**getServerApps()**](ServerAppsApi.md#getServerApps) | **GET** /serverApps | 
+[**resetServerAppTokenSignatureKey()**](ServerAppsApi.md#resetServerAppTokenSignatureKey) | **PUT** /serverApps/{uid}/tokenSignatureKey/reset | 
+[**updateServerApp()**](ServerAppsApi.md#updateServerApp) | **PUT** /serverApps/{uid} | 
+
+
+## `createServerApp()`
+
+```php
+createServerApp($create_server_app_request): \OpenAPI\Client\Model\ServerApp
+```
+
+
+
+Create and get a serverApp
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\ServerAppsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$create_server_app_request = new \OpenAPI\Client\Model\CreateServerAppRequest(); // \OpenAPI\Client\Model\CreateServerAppRequest
+
+try {
+    $result = $apiInstance->createServerApp($create_server_app_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ServerAppsApi->createServerApp: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **create_server_app_request** | [**\OpenAPI\Client\Model\CreateServerAppRequest**](../Model/CreateServerAppRequest.md)|  |
+
+### Return type
+
+[**\OpenAPI\Client\Model\ServerApp**](../Model/ServerApp.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deleteServerApp()`
+
+```php
+deleteServerApp($uid)
+```
+
+
+
+Delete a serverApp based on its uid
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\ServerAppsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$uid = 'uid_example'; // string | The uid of the serverApp to delete
+
+try {
+    $apiInstance->deleteServerApp($uid);
+} catch (Exception $e) {
+    echo 'Exception when calling ServerAppsApi->deleteServerApp: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uid** | **string**| The uid of the serverApp to delete |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getServerApp()`
+
+```php
+getServerApp($uid): \OpenAPI\Client\Model\ServerApp
+```
+
+
+
+Get a serverApp by its uid
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\ServerAppsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$uid = 'uid_example'; // string | The uid of the serverApp to get
+
+try {
+    $result = $apiInstance->getServerApp($uid);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ServerAppsApi->getServerApp: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uid** | **string**| The uid of the serverApp to get |
+
+### Return type
+
+[**\OpenAPI\Client\Model\ServerApp**](../Model/ServerApp.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getServerApps()`
+
+```php
+getServerApps($name, $page): \OpenAPI\Client\Model\GetServerAppsResponse
+```
+
+
+
+Get all serverApps with pagination support. A name filter can be applied
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\ServerAppsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$name = 'name_example'; // string | Filter serverApps by name
+$page = 56; // int | Specify the page to get. default: 1
+
+try {
+    $result = $apiInstance->getServerApps($name, $page);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ServerAppsApi->getServerApps: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**| Filter serverApps by name | [optional]
+ **page** | **int**| Specify the page to get. default: 1 | [optional]
+
+### Return type
+
+[**\OpenAPI\Client\Model\GetServerAppsResponse**](../Model/GetServerAppsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `resetServerAppTokenSignatureKey()`
+
+```php
+resetServerAppTokenSignatureKey($uid, $reset_server_app_token_signature_key_request): \OpenAPI\Client\Model\ServerApp
+```
+
+
+
+Reset a serverApp token signature key based on its uid and its current key
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\ServerAppsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$uid = 'uid_example'; // string | The uid of the serverApp to reset its token signature key
+$reset_server_app_token_signature_key_request = new \OpenAPI\Client\Model\ResetServerAppTokenSignatureKeyRequest(); // \OpenAPI\Client\Model\ResetServerAppTokenSignatureKeyRequest
+
+try {
+    $result = $apiInstance->resetServerAppTokenSignatureKey($uid, $reset_server_app_token_signature_key_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ServerAppsApi->resetServerAppTokenSignatureKey: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uid** | **string**| The uid of the serverApp to reset its token signature key |
+ **reset_server_app_token_signature_key_request** | [**\OpenAPI\Client\Model\ResetServerAppTokenSignatureKeyRequest**](../Model/ResetServerAppTokenSignatureKeyRequest.md)|  |
+
+### Return type
+
+[**\OpenAPI\Client\Model\ServerApp**](../Model/ServerApp.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `updateServerApp()`
+
+```php
+updateServerApp($uid, $update_server_app_request)
+```
+
+
+
+Update a serverApp based on its uid
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\ServerAppsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$uid = 'uid_example'; // string | The uid of the serverApp to update
+$update_server_app_request = new \OpenAPI\Client\Model\UpdateServerAppRequest(); // \OpenAPI\Client\Model\UpdateServerAppRequest
+
+try {
+    $apiInstance->updateServerApp($uid, $update_server_app_request);
+} catch (Exception $e) {
+    echo 'Exception when calling ServerAppsApi->updateServerApp: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uid** | **string**| The uid of the serverApp to update |
+ **update_server_app_request** | [**\OpenAPI\Client\Model\UpdateServerAppRequest**](../Model/UpdateServerAppRequest.md)|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
