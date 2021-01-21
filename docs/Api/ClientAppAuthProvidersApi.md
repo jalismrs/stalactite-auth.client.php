@@ -1,6 +1,6 @@
-# OpenAPI\Client\ClientAppAuthProvidersApi
+# Jalismrs\Stalactite\Client\Auth\ClientAppAuthProvidersApi
 
-All URIs are relative to https://stalactite.jalis.pro/auth.
+All URIs are relative to https://stalactite.jalis.dev/auth.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 ## `createFirebaseAuthProvider()`
 
 ```php
-createFirebaseAuthProvider($client_app_uid, $create_firebase_auth_provider_request): \OpenAPI\Client\Model\FirebaseAuthProvider
+createFirebaseAuthProvider($client_app_uid, $create_firebase_auth_provider_request): \Jalismrs\Stalactite\Client\Auth\Model\FirebaseAuthProvider
 ```
 
 
@@ -27,13 +27,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\ClientAppAuthProvidersApi(
+$apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\ClientAppAuthProvidersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $client_app_uid = 'client_app_uid_example'; // string | The uid of the clientApp to which to link a new Firebase authProvider
-$create_firebase_auth_provider_request = new \OpenAPI\Client\Model\CreateFirebaseAuthProviderRequest(); // \OpenAPI\Client\Model\CreateFirebaseAuthProviderRequest
+$create_firebase_auth_provider_request = new \Jalismrs\Stalactite\Client\Auth\Model\CreateFirebaseAuthProviderRequest(); // \Jalismrs\Stalactite\Client\Auth\Model\CreateFirebaseAuthProviderRequest
 
 try {
     $result = $apiInstance->createFirebaseAuthProvider($client_app_uid, $create_firebase_auth_provider_request);
@@ -48,11 +48,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **client_app_uid** | **string**| The uid of the clientApp to which to link a new Firebase authProvider |
- **create_firebase_auth_provider_request** | [**\OpenAPI\Client\Model\CreateFirebaseAuthProviderRequest**](../Model/CreateFirebaseAuthProviderRequest.md)|  |
+ **create_firebase_auth_provider_request** | [**\Jalismrs\Stalactite\Client\Auth\Model\CreateFirebaseAuthProviderRequest**](../Model/CreateFirebaseAuthProviderRequest.md)|  |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\FirebaseAuthProvider**](../Model/FirebaseAuthProvider.md)
+[**\Jalismrs\Stalactite\Client\Auth\Model\FirebaseAuthProvider**](../Model/FirebaseAuthProvider.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ No authorization required
 ## `createGoogleAuthProvider()`
 
 ```php
-createGoogleAuthProvider($client_app_uid, $create_google_auth_provider_request): \OpenAPI\Client\Model\GoogleAuthProvider
+createGoogleAuthProvider($client_app_uid, $create_google_auth_provider_request): \Jalismrs\Stalactite\Client\Auth\Model\GoogleAuthProvider
 ```
 
 
@@ -85,13 +85,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\ClientAppAuthProvidersApi(
+$apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\ClientAppAuthProvidersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $client_app_uid = 'client_app_uid_example'; // string | The uid of the clientApp to which to link a new Google authProvider
-$create_google_auth_provider_request = new \OpenAPI\Client\Model\CreateGoogleAuthProviderRequest(); // \OpenAPI\Client\Model\CreateGoogleAuthProviderRequest
+$create_google_auth_provider_request = new \Jalismrs\Stalactite\Client\Auth\Model\CreateGoogleAuthProviderRequest(); // \Jalismrs\Stalactite\Client\Auth\Model\CreateGoogleAuthProviderRequest
 
 try {
     $result = $apiInstance->createGoogleAuthProvider($client_app_uid, $create_google_auth_provider_request);
@@ -106,11 +106,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **client_app_uid** | **string**| The uid of the clientApp to which to link a new Google authProvider |
- **create_google_auth_provider_request** | [**\OpenAPI\Client\Model\CreateGoogleAuthProviderRequest**](../Model/CreateGoogleAuthProviderRequest.md)|  |
+ **create_google_auth_provider_request** | [**\Jalismrs\Stalactite\Client\Auth\Model\CreateGoogleAuthProviderRequest**](../Model/CreateGoogleAuthProviderRequest.md)|  |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\GoogleAuthProvider**](../Model/GoogleAuthProvider.md)
+[**\Jalismrs\Stalactite\Client\Auth\Model\GoogleAuthProvider**](../Model/GoogleAuthProvider.md)
 
 ### Authorization
 
@@ -128,7 +128,7 @@ No authorization required
 ## `getAllClientAppAuthProviders()`
 
 ```php
-getAllClientAppAuthProviders($client_app_uid): \OpenAPI\Client\Model\GetClientAppAuthProvidersResponse
+getAllClientAppAuthProviders($client_app_uid): \Jalismrs\Stalactite\Client\Auth\Model\GetClientAppAuthProvidersResponse
 ```
 
 
@@ -143,7 +143,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\ClientAppAuthProvidersApi(
+$apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\ClientAppAuthProvidersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\GetClientAppAuthProvidersResponse**](../Model/GetClientAppAuthProvidersResponse.md)
+[**\Jalismrs\Stalactite\Client\Auth\Model\GetClientAppAuthProvidersResponse**](../Model/GetClientAppAuthProvidersResponse.md)
 
 ### Authorization
 

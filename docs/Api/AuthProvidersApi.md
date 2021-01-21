@@ -1,6 +1,6 @@
-# OpenAPI\Client\AuthProvidersApi
+# Jalismrs\Stalactite\Client\Auth\AuthProvidersApi
 
-All URIs are relative to https://stalactite.jalis.pro/auth.
+All URIs are relative to https://stalactite.jalis.dev/auth.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -27,7 +27,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\AuthProvidersApi(
+$apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\AuthProvidersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -82,13 +82,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\AuthProvidersApi(
+$apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\AuthProvidersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $uid = 'uid_example'; // string | The uid of the Firebase authProvider to update
-$update_firebase_auth_provider_request = new \OpenAPI\Client\Model\UpdateFirebaseAuthProviderRequest(); // \OpenAPI\Client\Model\UpdateFirebaseAuthProviderRequest
+$update_firebase_auth_provider_request = new \Jalismrs\Stalactite\Client\Auth\Model\UpdateFirebaseAuthProviderRequest(); // \Jalismrs\Stalactite\Client\Auth\Model\UpdateFirebaseAuthProviderRequest
 
 try {
     $apiInstance->updateFirebaseAuthProvider($uid, $update_firebase_auth_provider_request);
@@ -102,7 +102,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uid** | **string**| The uid of the Firebase authProvider to update |
- **update_firebase_auth_provider_request** | [**\OpenAPI\Client\Model\UpdateFirebaseAuthProviderRequest**](../Model/UpdateFirebaseAuthProviderRequest.md)|  |
+ **update_firebase_auth_provider_request** | [**\Jalismrs\Stalactite\Client\Auth\Model\UpdateFirebaseAuthProviderRequest**](../Model/UpdateFirebaseAuthProviderRequest.md)|  |
 
 ### Return type
 
@@ -139,13 +139,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\AuthProvidersApi(
+$apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\AuthProvidersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $uid = 'uid_example'; // string | The uid of the Google authProvider to update
-$update_google_auth_provider_request = new \OpenAPI\Client\Model\UpdateGoogleAuthProviderRequest(); // \OpenAPI\Client\Model\UpdateGoogleAuthProviderRequest
+$update_google_auth_provider_request = new \Jalismrs\Stalactite\Client\Auth\Model\UpdateGoogleAuthProviderRequest(); // \Jalismrs\Stalactite\Client\Auth\Model\UpdateGoogleAuthProviderRequest
 
 try {
     $apiInstance->updateGoogleAuthProvider($uid, $update_google_auth_provider_request);
@@ -159,7 +159,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uid** | **string**| The uid of the Google authProvider to update |
- **update_google_auth_provider_request** | [**\OpenAPI\Client\Model\UpdateGoogleAuthProviderRequest**](../Model/UpdateGoogleAuthProviderRequest.md)|  |
+ **update_google_auth_provider_request** | [**\Jalismrs\Stalactite\Client\Auth\Model\UpdateGoogleAuthProviderRequest**](../Model/UpdateGoogleAuthProviderRequest.md)|  |
 
 ### Return type
 

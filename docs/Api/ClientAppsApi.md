@@ -1,6 +1,6 @@
-# OpenAPI\Client\ClientAppsApi
+# Jalismrs\Stalactite\Client\Auth\ClientAppsApi
 
-All URIs are relative to https://stalactite.jalis.pro/auth.
+All URIs are relative to https://stalactite.jalis.dev/auth.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 ## `createClientApp()`
 
 ```php
-createClientApp($create_client_app_request): \OpenAPI\Client\Model\ClientApp
+createClientApp($create_client_app_request): \Jalismrs\Stalactite\Client\Auth\Model\ClientApp
 ```
 
 
@@ -29,12 +29,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\ClientAppsApi(
+$apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\ClientAppsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$create_client_app_request = new \OpenAPI\Client\Model\CreateClientAppRequest(); // \OpenAPI\Client\Model\CreateClientAppRequest
+$create_client_app_request = new \Jalismrs\Stalactite\Client\Auth\Model\CreateClientAppRequest(); // \Jalismrs\Stalactite\Client\Auth\Model\CreateClientAppRequest
 
 try {
     $result = $apiInstance->createClientApp($create_client_app_request);
@@ -48,11 +48,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_client_app_request** | [**\OpenAPI\Client\Model\CreateClientAppRequest**](../Model/CreateClientAppRequest.md)|  |
+ **create_client_app_request** | [**\Jalismrs\Stalactite\Client\Auth\Model\CreateClientAppRequest**](../Model/CreateClientAppRequest.md)|  |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ClientApp**](../Model/ClientApp.md)
+[**\Jalismrs\Stalactite\Client\Auth\Model\ClientApp**](../Model/ClientApp.md)
 
 ### Authorization
 
@@ -85,7 +85,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\ClientAppsApi(
+$apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\ClientAppsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -125,7 +125,7 @@ No authorization required
 ## `getClientApp()`
 
 ```php
-getClientApp($uid): \OpenAPI\Client\Model\ClientApp
+getClientApp($uid): \Jalismrs\Stalactite\Client\Auth\Model\ClientApp
 ```
 
 
@@ -140,7 +140,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\ClientAppsApi(
+$apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\ClientAppsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ClientApp**](../Model/ClientApp.md)
+[**\Jalismrs\Stalactite\Client\Auth\Model\ClientApp**](../Model/ClientApp.md)
 
 ### Authorization
 
@@ -181,7 +181,7 @@ No authorization required
 ## `getClientApps()`
 
 ```php
-getClientApps($name, $page): \OpenAPI\Client\Model\GetClientAppsResponse
+getClientApps($name, $page): \Jalismrs\Stalactite\Client\Auth\Model\GetClientAppsResponse
 ```
 
 
@@ -196,7 +196,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\ClientAppsApi(
+$apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\ClientAppsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\GetClientAppsResponse**](../Model/GetClientAppsResponse.md)
+[**\Jalismrs\Stalactite\Client\Auth\Model\GetClientAppsResponse**](../Model/GetClientAppsResponse.md)
 
 ### Authorization
 
@@ -254,13 +254,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\ClientAppsApi(
+$apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\ClientAppsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $uid = 'uid_example'; // string | The uid of the clientApp to update
-$update_client_app_request = new \OpenAPI\Client\Model\UpdateClientAppRequest(); // \OpenAPI\Client\Model\UpdateClientAppRequest
+$update_client_app_request = new \Jalismrs\Stalactite\Client\Auth\Model\UpdateClientAppRequest(); // \Jalismrs\Stalactite\Client\Auth\Model\UpdateClientAppRequest
 
 try {
     $apiInstance->updateClientApp($uid, $update_client_app_request);
@@ -274,7 +274,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uid** | **string**| The uid of the clientApp to update |
- **update_client_app_request** | [**\OpenAPI\Client\Model\UpdateClientAppRequest**](../Model/UpdateClientAppRequest.md)|  |
+ **update_client_app_request** | [**\Jalismrs\Stalactite\Client\Auth\Model\UpdateClientAppRequest**](../Model/UpdateClientAppRequest.md)|  |
 
 ### Return type
 

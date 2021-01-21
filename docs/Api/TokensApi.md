@@ -1,6 +1,6 @@
-# OpenAPI\Client\TokensApi
+# Jalismrs\Stalactite\Client\Auth\TokensApi
 
-All URIs are relative to https://stalactite.jalis.pro/auth.
+All URIs are relative to https://stalactite.jalis.dev/auth.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -26,7 +26,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\TokensApi(
+$apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\TokensApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -63,7 +63,7 @@ No authorization required
 ## `login()`
 
 ```php
-login($login_request): \OpenAPI\Client\Model\LoginResponse
+login($login_request): \Jalismrs\Stalactite\Client\Auth\Model\LoginResponse
 ```
 
 
@@ -78,12 +78,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\TokensApi(
+$apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\TokensApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$login_request = new \OpenAPI\Client\Model\LoginRequest(); // \OpenAPI\Client\Model\LoginRequest
+$login_request = new \Jalismrs\Stalactite\Client\Auth\Model\LoginRequest(); // \Jalismrs\Stalactite\Client\Auth\Model\LoginRequest
 
 try {
     $result = $apiInstance->login($login_request);
@@ -97,11 +97,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **login_request** | [**\OpenAPI\Client\Model\LoginRequest**](../Model/LoginRequest.md)|  |
+ **login_request** | [**\Jalismrs\Stalactite\Client\Auth\Model\LoginRequest**](../Model/LoginRequest.md)|  |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\LoginResponse**](../Model/LoginResponse.md)
+[**\Jalismrs\Stalactite\Client\Auth\Model\LoginResponse**](../Model/LoginResponse.md)
 
 ### Authorization
 
