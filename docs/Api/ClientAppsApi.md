@@ -28,11 +28,17 @@ Create and get a clientApp
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: StalactiteToken
+$config = Jalismrs\Stalactite\Client\Auth\Configuration::getDefaultConfiguration()->setApiKey('X-API-TOKEN', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Jalismrs\Stalactite\Client\Auth\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-TOKEN', 'Bearer');
+
 
 $apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\ClientAppsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $create_client_app_request = new \Jalismrs\Stalactite\Client\Auth\Model\CreateClientAppRequest(); // \Jalismrs\Stalactite\Client\Auth\Model\CreateClientAppRequest
 
@@ -56,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[StalactiteToken](../../README.md#StalactiteToken)
 
 ### HTTP request headers
 
@@ -84,11 +90,17 @@ Delete a clientApp based on its uid
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: StalactiteToken
+$config = Jalismrs\Stalactite\Client\Auth\Configuration::getDefaultConfiguration()->setApiKey('X-API-TOKEN', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Jalismrs\Stalactite\Client\Auth\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-TOKEN', 'Bearer');
+
 
 $apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\ClientAppsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $uid = 'uid_example'; // string | The uid of the clientApp to delete
 
@@ -111,7 +123,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[StalactiteToken](../../README.md#StalactiteToken)
 
 ### HTTP request headers
 
@@ -139,11 +151,17 @@ Get a clientApp by its uid
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: StalactiteToken
+$config = Jalismrs\Stalactite\Client\Auth\Configuration::getDefaultConfiguration()->setApiKey('X-API-TOKEN', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Jalismrs\Stalactite\Client\Auth\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-TOKEN', 'Bearer');
+
 
 $apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\ClientAppsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $uid = 'uid_example'; // string | The uid of the clientApp to get
 
@@ -167,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[StalactiteToken](../../README.md#StalactiteToken)
 
 ### HTTP request headers
 
@@ -195,11 +213,17 @@ Get all clientApps with pagination support. A name filter can be applied
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: StalactiteToken
+$config = Jalismrs\Stalactite\Client\Auth\Configuration::getDefaultConfiguration()->setApiKey('X-API-TOKEN', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Jalismrs\Stalactite\Client\Auth\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-TOKEN', 'Bearer');
+
 
 $apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\ClientAppsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $name = 'name_example'; // string | Filter clientApps by name
 $page = 56; // int | Specify the page to get. default: 1
@@ -225,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[StalactiteToken](../../README.md#StalactiteToken)
 
 ### HTTP request headers
 
@@ -253,11 +277,17 @@ Update a clientApp based on its uid
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: StalactiteToken
+$config = Jalismrs\Stalactite\Client\Auth\Configuration::getDefaultConfiguration()->setApiKey('X-API-TOKEN', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Jalismrs\Stalactite\Client\Auth\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-TOKEN', 'Bearer');
+
 
 $apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\ClientAppsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $uid = 'uid_example'; // string | The uid of the clientApp to update
 $update_client_app_request = new \Jalismrs\Stalactite\Client\Auth\Model\UpdateClientAppRequest(); // \Jalismrs\Stalactite\Client\Auth\Model\UpdateClientAppRequest
@@ -282,7 +312,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[StalactiteToken](../../README.md#StalactiteToken)
 
 ### HTTP request headers
 

@@ -26,11 +26,17 @@ Delete an authProvider given its uid
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: StalactiteToken
+$config = Jalismrs\Stalactite\Client\Auth\Configuration::getDefaultConfiguration()->setApiKey('X-API-TOKEN', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Jalismrs\Stalactite\Client\Auth\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-TOKEN', 'Bearer');
+
 
 $apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\AuthProvidersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $uid = 'uid_example'; // string | The uid of the authProvider to delete
 
@@ -53,7 +59,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[StalactiteToken](../../README.md#StalactiteToken)
 
 ### HTTP request headers
 
@@ -81,11 +87,17 @@ Update a Firebase AuthProvider given its uid
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: StalactiteToken
+$config = Jalismrs\Stalactite\Client\Auth\Configuration::getDefaultConfiguration()->setApiKey('X-API-TOKEN', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Jalismrs\Stalactite\Client\Auth\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-TOKEN', 'Bearer');
+
 
 $apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\AuthProvidersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $uid = 'uid_example'; // string | The uid of the Firebase authProvider to update
 $update_firebase_auth_provider_request = new \Jalismrs\Stalactite\Client\Auth\Model\UpdateFirebaseAuthProviderRequest(); // \Jalismrs\Stalactite\Client\Auth\Model\UpdateFirebaseAuthProviderRequest
@@ -110,7 +122,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[StalactiteToken](../../README.md#StalactiteToken)
 
 ### HTTP request headers
 
@@ -138,11 +150,17 @@ Update a Google AuthProvider given its uid
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: StalactiteToken
+$config = Jalismrs\Stalactite\Client\Auth\Configuration::getDefaultConfiguration()->setApiKey('X-API-TOKEN', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Jalismrs\Stalactite\Client\Auth\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-TOKEN', 'Bearer');
+
 
 $apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\AuthProvidersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $uid = 'uid_example'; // string | The uid of the Google authProvider to update
 $update_google_auth_provider_request = new \Jalismrs\Stalactite\Client\Auth\Model\UpdateGoogleAuthProviderRequest(); // \Jalismrs\Stalactite\Client\Auth\Model\UpdateGoogleAuthProviderRequest
@@ -167,7 +185,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[StalactiteToken](../../README.md#StalactiteToken)
 
 ### HTTP request headers
 

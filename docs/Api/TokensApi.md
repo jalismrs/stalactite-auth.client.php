@@ -25,11 +25,17 @@ Checks if a Stalactite token is valid or not
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: StalactiteToken
+$config = Jalismrs\Stalactite\Client\Auth\Configuration::getDefaultConfiguration()->setApiKey('X-API-TOKEN', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Jalismrs\Stalactite\Client\Auth\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-TOKEN', 'Bearer');
+
 
 $apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\TokensApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -49,7 +55,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[StalactiteToken](../../README.md#StalactiteToken)
 
 ### HTTP request headers
 

@@ -26,11 +26,17 @@ Create a FirebaseAuthProvider for a given ClienApp
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: StalactiteToken
+$config = Jalismrs\Stalactite\Client\Auth\Configuration::getDefaultConfiguration()->setApiKey('X-API-TOKEN', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Jalismrs\Stalactite\Client\Auth\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-TOKEN', 'Bearer');
+
 
 $apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\ClientAppAuthProvidersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $client_app_uid = 'client_app_uid_example'; // string | The uid of the clientApp to which to link a new Firebase authProvider
 $create_firebase_auth_provider_request = new \Jalismrs\Stalactite\Client\Auth\Model\CreateFirebaseAuthProviderRequest(); // \Jalismrs\Stalactite\Client\Auth\Model\CreateFirebaseAuthProviderRequest
@@ -56,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[StalactiteToken](../../README.md#StalactiteToken)
 
 ### HTTP request headers
 
@@ -84,11 +90,17 @@ Create a GoogleAuthProvider for a given ClienApp
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: StalactiteToken
+$config = Jalismrs\Stalactite\Client\Auth\Configuration::getDefaultConfiguration()->setApiKey('X-API-TOKEN', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Jalismrs\Stalactite\Client\Auth\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-TOKEN', 'Bearer');
+
 
 $apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\ClientAppAuthProvidersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $client_app_uid = 'client_app_uid_example'; // string | The uid of the clientApp to which to link a new Google authProvider
 $create_google_auth_provider_request = new \Jalismrs\Stalactite\Client\Auth\Model\CreateGoogleAuthProviderRequest(); // \Jalismrs\Stalactite\Client\Auth\Model\CreateGoogleAuthProviderRequest
@@ -114,7 +126,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[StalactiteToken](../../README.md#StalactiteToken)
 
 ### HTTP request headers
 
@@ -142,11 +154,17 @@ Get all authProviders of a clientApp based on its uid
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: StalactiteToken
+$config = Jalismrs\Stalactite\Client\Auth\Configuration::getDefaultConfiguration()->setApiKey('X-API-TOKEN', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Jalismrs\Stalactite\Client\Auth\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-TOKEN', 'Bearer');
+
 
 $apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\ClientAppAuthProvidersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $client_app_uid = 'client_app_uid_example'; // string | The uid of the clientApp
 
@@ -170,7 +188,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[StalactiteToken](../../README.md#StalactiteToken)
 
 ### HTTP request headers
 
