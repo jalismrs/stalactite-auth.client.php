@@ -1,6 +1,6 @@
 # Jalismrs\Stalactite\Client\Auth\ClientAppsApi
 
-All URIs are relative to https://stalactite.jalis.dev/auth.
+All URIs are relative to https://stalactite.jalis.pro/auth.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
