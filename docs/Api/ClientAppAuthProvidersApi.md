@@ -12,7 +12,7 @@ Method | HTTP request | Description
 ## `createFirebaseAuthProvider()`
 
 ```php
-createFirebaseAuthProvider($client_app_uid, $uid, $create_firebase_auth_provider_request): \Jalismrs\Stalactite\Client\Auth\Model\FirebaseAuthProvider
+createFirebaseAuthProvider($uid, $create_firebase_auth_provider_request): \Jalismrs\Stalactite\Client\Auth\Model\FirebaseAuthProvider
 ```
 
 
@@ -38,12 +38,11 @@ $apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\ClientAppAuthProvidersApi
     new GuzzleHttp\Client(),
     $config
 );
-$client_app_uid = 'client_app_uid_example'; // string | The uid of the clientApp to which to link a new Firebase authProvider
-$uid = 'uid_example'; // string
+$uid = 'uid_example'; // string | The uid of the clientApp to which to link a new Firebase authProvider
 $create_firebase_auth_provider_request = new \Jalismrs\Stalactite\Client\Auth\Model\CreateFirebaseAuthProviderRequest(); // \Jalismrs\Stalactite\Client\Auth\Model\CreateFirebaseAuthProviderRequest
 
 try {
-    $result = $apiInstance->createFirebaseAuthProvider($client_app_uid, $uid, $create_firebase_auth_provider_request);
+    $result = $apiInstance->createFirebaseAuthProvider($uid, $create_firebase_auth_provider_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ClientAppAuthProvidersApi->createFirebaseAuthProvider: ', $e->getMessage(), PHP_EOL;
@@ -54,8 +53,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client_app_uid** | **string**| The uid of the clientApp to which to link a new Firebase authProvider |
- **uid** | **string**|  |
+ **uid** | **string**| The uid of the clientApp to which to link a new Firebase authProvider |
  **create_firebase_auth_provider_request** | [**\Jalismrs\Stalactite\Client\Auth\Model\CreateFirebaseAuthProviderRequest**](../Model/CreateFirebaseAuthProviderRequest.md)|  |
 
 ### Return type
@@ -78,7 +76,7 @@ Name | Type | Description  | Notes
 ## `createGoogleAuthProvider()`
 
 ```php
-createGoogleAuthProvider($client_app_uid, $uid, $create_google_auth_provider_request): \Jalismrs\Stalactite\Client\Auth\Model\GoogleAuthProvider
+createGoogleAuthProvider($uid, $create_google_auth_provider_request): \Jalismrs\Stalactite\Client\Auth\Model\GoogleAuthProvider
 ```
 
 
@@ -104,12 +102,11 @@ $apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\ClientAppAuthProvidersApi
     new GuzzleHttp\Client(),
     $config
 );
-$client_app_uid = 'client_app_uid_example'; // string | The uid of the clientApp to which to link a new Google authProvider
-$uid = 'uid_example'; // string
+$uid = 'uid_example'; // string | The uid of the clientApp to which to link a new Google authProvider
 $create_google_auth_provider_request = new \Jalismrs\Stalactite\Client\Auth\Model\CreateGoogleAuthProviderRequest(); // \Jalismrs\Stalactite\Client\Auth\Model\CreateGoogleAuthProviderRequest
 
 try {
-    $result = $apiInstance->createGoogleAuthProvider($client_app_uid, $uid, $create_google_auth_provider_request);
+    $result = $apiInstance->createGoogleAuthProvider($uid, $create_google_auth_provider_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ClientAppAuthProvidersApi->createGoogleAuthProvider: ', $e->getMessage(), PHP_EOL;
@@ -120,8 +117,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client_app_uid** | **string**| The uid of the clientApp to which to link a new Google authProvider |
- **uid** | **string**|  |
+ **uid** | **string**| The uid of the clientApp to which to link a new Google authProvider |
  **create_google_auth_provider_request** | [**\Jalismrs\Stalactite\Client\Auth\Model\CreateGoogleAuthProviderRequest**](../Model/CreateGoogleAuthProviderRequest.md)|  |
 
 ### Return type
@@ -144,7 +140,7 @@ Name | Type | Description  | Notes
 ## `getAllClientAppAuthProviders()`
 
 ```php
-getAllClientAppAuthProviders($client_app_uid, $uid): \Jalismrs\Stalactite\Client\Auth\Model\GetClientAppAuthProvidersResponse
+getAllClientAppAuthProviders($uid): \Jalismrs\Stalactite\Client\Auth\Model\GetClientAppAuthProvidersResponse
 ```
 
 
@@ -170,11 +166,10 @@ $apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\ClientAppAuthProvidersApi
     new GuzzleHttp\Client(),
     $config
 );
-$client_app_uid = 'client_app_uid_example'; // string | The uid of the clientApp
-$uid = 'uid_example'; // string
+$uid = 'uid_example'; // string | The uid of the clientApp
 
 try {
-    $result = $apiInstance->getAllClientAppAuthProviders($client_app_uid, $uid);
+    $result = $apiInstance->getAllClientAppAuthProviders($uid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ClientAppAuthProvidersApi->getAllClientAppAuthProviders: ', $e->getMessage(), PHP_EOL;
@@ -185,8 +180,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client_app_uid** | **string**| The uid of the clientApp |
- **uid** | **string**|  |
+ **uid** | **string**| The uid of the clientApp |
 
 ### Return type
 
