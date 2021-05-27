@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 ## `getServerApps()`
 
 ```php
-getServerApps($name, $page): \Jalismrs\Stalactite\Client\Auth\Model\GetServerAppsResponse
+getServerApps($page, $name): \Jalismrs\Stalactite\Client\Auth\Model\GetServerAppsResponse
 ```
 
 
@@ -226,11 +226,11 @@ $apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\ServerAppsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$name = 'name_example'; // string | Filter serverApps by name
 $page = 56; // int | Specify the page to get. default: 1
+$name = 'name_example'; // string | Filter serverApps by name
 
 try {
-    $result = $apiInstance->getServerApps($name, $page);
+    $result = $apiInstance->getServerApps($page, $name);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ServerAppsApi->getServerApps: ', $e->getMessage(), PHP_EOL;
@@ -241,8 +241,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **string**| Filter serverApps by name | [optional]
  **page** | **int**| Specify the page to get. default: 1 | [optional]
+ **name** | **string**| Filter serverApps by name | [optional]
 
 ### Return type
 

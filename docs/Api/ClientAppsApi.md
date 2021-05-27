@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 ## `getClientApps()`
 
 ```php
-getClientApps($name, $page): \Jalismrs\Stalactite\Client\Auth\Model\GetClientAppsResponse
+getClientApps($page, $name): \Jalismrs\Stalactite\Client\Auth\Model\GetClientAppsResponse
 ```
 
 
@@ -225,11 +225,11 @@ $apiInstance = new Jalismrs\Stalactite\Client\Auth\Api\ClientAppsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$name = 'name_example'; // string | Filter clientApps by name
 $page = 56; // int | Specify the page to get. default: 1
+$name = 'name_example'; // string | Filter clientApps by name
 
 try {
-    $result = $apiInstance->getClientApps($name, $page);
+    $result = $apiInstance->getClientApps($page, $name);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ClientAppsApi->getClientApps: ', $e->getMessage(), PHP_EOL;
@@ -240,8 +240,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **string**| Filter clientApps by name | [optional]
  **page** | **int**| Specify the page to get. default: 1 | [optional]
+ **name** | **string**| Filter clientApps by name | [optional]
 
 ### Return type
 
