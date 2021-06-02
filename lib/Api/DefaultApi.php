@@ -1,6 +1,6 @@
 <?php
 /**
- * TokensApi
+ * DefaultApi
  * PHP version 7.2
  *
  * @category Class
@@ -39,14 +39,14 @@ use Jalismrs\Stalactite\Client\Auth\HeaderSelector;
 use Jalismrs\Stalactite\Client\Auth\ObjectSerializer;
 
 /**
- * TokensApi Class Doc Comment
+ * DefaultApi Class Doc Comment
  *
  * @category Class
  * @package  Jalismrs\Stalactite\Client\Auth
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class TokensApi
+class DefaultApi
 {
     /**
      * @var ClientInterface
@@ -115,29 +115,32 @@ class TokensApi
     }
 
     /**
-     * Operation checkToken
+     * Operation getFirebaseAuthprovider
      *
+     * @param  string $uid The uid of the FirebaseAuthProvider to get (required)
      *
      * @throws \Jalismrs\Stalactite\Client\Auth\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \Jalismrs\Stalactite\Client\Auth\Model\FirebaseAuthProvider|\Jalismrs\Stalactite\Client\Auth\Model\ApiError
      */
-    public function checkToken()
+    public function getFirebaseAuthprovider($uid)
     {
-        $this->checkTokenWithHttpInfo();
+        list($response) = $this->getFirebaseAuthproviderWithHttpInfo($uid);
+        return $response;
     }
 
     /**
-     * Operation checkTokenWithHttpInfo
+     * Operation getFirebaseAuthproviderWithHttpInfo
      *
+     * @param  string $uid The uid of the FirebaseAuthProvider to get (required)
      *
      * @throws \Jalismrs\Stalactite\Client\Auth\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Jalismrs\Stalactite\Client\Auth\Model\FirebaseAuthProvider|\Jalismrs\Stalactite\Client\Auth\Model\ApiError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function checkTokenWithHttpInfo()
+    public function getFirebaseAuthproviderWithHttpInfo($uid)
     {
-        $request = $this->checkTokenRequest();
+        $request = $this->getFirebaseAuthproviderRequest($uid);
 
         try {
             $options = $this->createHttpClientOption();
@@ -167,10 +170,56 @@ class TokensApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            switch($statusCode) {
+                case 200:
+                    if ('\Jalismrs\Stalactite\Client\Auth\Model\FirebaseAuthProvider' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Jalismrs\Stalactite\Client\Auth\Model\FirebaseAuthProvider', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                default:
+                    if ('\Jalismrs\Stalactite\Client\Auth\Model\ApiError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Jalismrs\Stalactite\Client\Auth\Model\ApiError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Jalismrs\Stalactite\Client\Auth\Model\FirebaseAuthProvider';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Jalismrs\Stalactite\Client\Auth\Model\FirebaseAuthProvider',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 default:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -185,15 +234,16 @@ class TokensApi
     }
 
     /**
-     * Operation checkTokenAsync
+     * Operation getFirebaseAuthproviderAsync
      *
+     * @param  string $uid The uid of the FirebaseAuthProvider to get (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function checkTokenAsync()
+    public function getFirebaseAuthproviderAsync($uid)
     {
-        return $this->checkTokenAsyncWithHttpInfo()
+        return $this->getFirebaseAuthproviderAsyncWithHttpInfo($uid)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -202,22 +252,33 @@ class TokensApi
     }
 
     /**
-     * Operation checkTokenAsyncWithHttpInfo
+     * Operation getFirebaseAuthproviderAsyncWithHttpInfo
      *
+     * @param  string $uid The uid of the FirebaseAuthProvider to get (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function checkTokenAsyncWithHttpInfo()
+    public function getFirebaseAuthproviderAsyncWithHttpInfo($uid)
     {
-        $returnType = '';
-        $request = $this->checkTokenRequest();
+        $returnType = '\Jalismrs\Stalactite\Client\Auth\Model\FirebaseAuthProvider';
+        $request = $this->getFirebaseAuthproviderRequest($uid);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -237,16 +298,27 @@ class TokensApi
     }
 
     /**
-     * Create request for operation 'checkToken'
+     * Create request for operation 'getFirebaseAuthprovider'
      *
+     * @param  string $uid The uid of the FirebaseAuthProvider to get (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function checkTokenRequest()
+    public function getFirebaseAuthproviderRequest($uid)
     {
+        // verify the required parameter 'uid' is set
+        if ($uid === null || (is_array($uid) && count($uid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $uid when calling getFirebaseAuthprovider'
+            );
+        }
+        if (!preg_match("/[a-z0-9]{64}/", $uid)) {
+            throw new \InvalidArgumentException("invalid value for \"uid\" when calling DefaultApi.getFirebaseAuthprovider, must conform to the pattern /[a-z0-9]{64}/.");
+        }
 
-        $resourcePath = '/tokens';
+
+        $resourcePath = '/authProviders/firebase/{uid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -255,6 +327,14 @@ class TokensApi
 
 
 
+        // path params
+        if ($uid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'uid' . '}',
+                ObjectSerializer::toPathValue($uid),
+                $resourcePath
+            );
+        }
 
 
         if ($multipart) {
@@ -312,7 +392,7 @@ class TokensApi
 
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
-            'HEAD',
+            'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -320,32 +400,32 @@ class TokensApi
     }
 
     /**
-     * Operation login
+     * Operation getGoogleAuthprovider
      *
-     * @param  \Jalismrs\Stalactite\Client\Auth\Model\LoginRequest $login_request login_request (required)
+     * @param  string $uid The uid of the GoogleAuthProvider to get (required)
      *
      * @throws \Jalismrs\Stalactite\Client\Auth\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Jalismrs\Stalactite\Client\Auth\Model\LoginResponse|\Jalismrs\Stalactite\Client\Auth\Model\ApiError
+     * @return \Jalismrs\Stalactite\Client\Auth\Model\GoogleAuthProvider|\Jalismrs\Stalactite\Client\Auth\Model\ApiError
      */
-    public function login($login_request)
+    public function getGoogleAuthprovider($uid)
     {
-        list($response) = $this->loginWithHttpInfo($login_request);
+        list($response) = $this->getGoogleAuthproviderWithHttpInfo($uid);
         return $response;
     }
 
     /**
-     * Operation loginWithHttpInfo
+     * Operation getGoogleAuthproviderWithHttpInfo
      *
-     * @param  \Jalismrs\Stalactite\Client\Auth\Model\LoginRequest $login_request (required)
+     * @param  string $uid The uid of the GoogleAuthProvider to get (required)
      *
      * @throws \Jalismrs\Stalactite\Client\Auth\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Jalismrs\Stalactite\Client\Auth\Model\LoginResponse|\Jalismrs\Stalactite\Client\Auth\Model\ApiError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Jalismrs\Stalactite\Client\Auth\Model\GoogleAuthProvider|\Jalismrs\Stalactite\Client\Auth\Model\ApiError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function loginWithHttpInfo($login_request)
+    public function getGoogleAuthproviderWithHttpInfo($uid)
     {
-        $request = $this->loginRequest($login_request);
+        $request = $this->getGoogleAuthproviderRequest($uid);
 
         try {
             $options = $this->createHttpClientOption();
@@ -377,14 +457,14 @@ class TokensApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Jalismrs\Stalactite\Client\Auth\Model\LoginResponse' === '\SplFileObject') {
+                    if ('\Jalismrs\Stalactite\Client\Auth\Model\GoogleAuthProvider' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Jalismrs\Stalactite\Client\Auth\Model\LoginResponse', []),
+                        ObjectSerializer::deserialize($content, '\Jalismrs\Stalactite\Client\Auth\Model\GoogleAuthProvider', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -402,7 +482,7 @@ class TokensApi
                     ];
             }
 
-            $returnType = '\Jalismrs\Stalactite\Client\Auth\Model\LoginResponse';
+            $returnType = '\Jalismrs\Stalactite\Client\Auth\Model\GoogleAuthProvider';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -420,7 +500,7 @@ class TokensApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Jalismrs\Stalactite\Client\Auth\Model\LoginResponse',
+                        '\Jalismrs\Stalactite\Client\Auth\Model\GoogleAuthProvider',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -439,16 +519,16 @@ class TokensApi
     }
 
     /**
-     * Operation loginAsync
+     * Operation getGoogleAuthproviderAsync
      *
-     * @param  \Jalismrs\Stalactite\Client\Auth\Model\LoginRequest $login_request (required)
+     * @param  string $uid The uid of the GoogleAuthProvider to get (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginAsync($login_request)
+    public function getGoogleAuthproviderAsync($uid)
     {
-        return $this->loginAsyncWithHttpInfo($login_request)
+        return $this->getGoogleAuthproviderAsyncWithHttpInfo($uid)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -457,17 +537,17 @@ class TokensApi
     }
 
     /**
-     * Operation loginAsyncWithHttpInfo
+     * Operation getGoogleAuthproviderAsyncWithHttpInfo
      *
-     * @param  \Jalismrs\Stalactite\Client\Auth\Model\LoginRequest $login_request (required)
+     * @param  string $uid The uid of the GoogleAuthProvider to get (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginAsyncWithHttpInfo($login_request)
+    public function getGoogleAuthproviderAsyncWithHttpInfo($uid)
     {
-        $returnType = '\Jalismrs\Stalactite\Client\Auth\Model\LoginResponse';
-        $request = $this->loginRequest($login_request);
+        $returnType = '\Jalismrs\Stalactite\Client\Auth\Model\GoogleAuthProvider';
+        $request = $this->getGoogleAuthproviderRequest($uid);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -503,23 +583,27 @@ class TokensApi
     }
 
     /**
-     * Create request for operation 'login'
+     * Create request for operation 'getGoogleAuthprovider'
      *
-     * @param  \Jalismrs\Stalactite\Client\Auth\Model\LoginRequest $login_request (required)
+     * @param  string $uid The uid of the GoogleAuthProvider to get (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function loginRequest($login_request)
+    public function getGoogleAuthproviderRequest($uid)
     {
-        // verify the required parameter 'login_request' is set
-        if ($login_request === null || (is_array($login_request) && count($login_request) === 0)) {
+        // verify the required parameter 'uid' is set
+        if ($uid === null || (is_array($uid) && count($uid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $login_request when calling login'
+                'Missing the required parameter $uid when calling getGoogleAuthprovider'
             );
         }
+        if (!preg_match("/[a-z0-9]{64}/", $uid)) {
+            throw new \InvalidArgumentException("invalid value for \"uid\" when calling DefaultApi.getGoogleAuthprovider, must conform to the pattern /[a-z0-9]{64}/.");
+        }
 
-        $resourcePath = '/tokens';
+
+        $resourcePath = '/authProviders/google/{uid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -528,6 +612,14 @@ class TokensApi
 
 
 
+        // path params
+        if ($uid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'uid' . '}',
+                ObjectSerializer::toPathValue($uid),
+                $resourcePath
+            );
+        }
 
 
         if ($multipart) {
@@ -537,18 +629,12 @@ class TokensApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json']
+                []
             );
         }
 
         // for model (json/xml)
-        if (isset($login_request)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($login_request));
-            } else {
-                $httpBody = $login_request;
-            }
-        } elseif (count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -572,6 +658,11 @@ class TokensApi
             }
         }
 
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-API-TOKEN');
+        if ($apiKey !== null) {
+            $headers['X-API-TOKEN'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -586,7 +677,7 @@ class TokensApi
 
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
-            'POST',
+            'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
