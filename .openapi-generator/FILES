@@ -7,7 +7,6 @@ composer.json
 docs/Api/AuthProvidersApi.md
 docs/Api/ClientAppAuthProvidersApi.md
 docs/Api/ClientAppsApi.md
-docs/Api/DefaultApi.md
 docs/Api/ServerAppsApi.md
 docs/Api/TokensApi.md
 docs/Model/ApiError.md
@@ -34,7 +33,6 @@ git_push.sh
 lib/Api/AuthProvidersApi.php
 lib/Api/ClientAppAuthProvidersApi.php
 lib/Api/ClientAppsApi.php
-lib/Api/DefaultApi.php
 lib/Api/ServerAppsApi.php
 lib/Api/TokensApi.php
 lib/ApiException.php
